@@ -1,0 +1,290 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SendWeiboActivity" >
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="#291d29" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:background="@drawable/title_background"
+            android:gravity="center"
+            android:text="发微博"
+            android:textColor="#ffffff"
+            android:textSize="25sp" />
+
+        <ImageButton
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/title_background"
+            android:clickable="true"
+            android:onClick="keyboard"
+            android:src="@drawable/ic_hardware_keyboard" />
+    </RelativeLayout>
+
+    <EditText
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/mid_layout"
+        android:layout_below="@+id/title"
+        android:layout_margin="6dp"
+        android:background="@null"
+        android:gravity="left|top"
+        android:hint="最多输入一百四十字*"
+        android:maxLength="140" />
+
+    <RelativeLayout
+        android:id="@+id/mid_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scroll_layout"
+        android:background="@drawable/tab_background4"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/tab_background3"
+            android:gravity="center"
+            android:paddingBottom="11dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:paddingTop="11dp"
+            android:text="剩余文字:140"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/tab_background5"
+            android:clickable="true"
+            android:gravity="center"
+            android:onClick="send"
+            android:paddingBottom="11dp"
+            android:paddingLeft="22dp"
+            android:paddingRight="22dp"
+            android:paddingTop="11dp"
+            android:text="Send"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_layout"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/tab_background6" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/logo_sinaweibo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingLeft="60dp"
+                    android:text="新浪微博"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/sinaweibo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/tab_background6"
+                    android:clickable="true"
+                    android:onClick="selectPlatform"
+                    android:src="@drawable/ic_rating_not_important"
+                    android:tag="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/tab_background7" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/logo_tencentweibo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingLeft="60dp"
+                    android:text="腾讯微博"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/tencentweibo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/tab_background7"
+                    android:clickable="true"
+                    android:onClick="selectPlatform"
+                    android:src="@drawable/ic_rating_not_important"
+                    android:tag="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/tab_background8" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/logo_sohumicroblog" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingLeft="60dp"
+                    android:text="搜狐微博"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+<!--                 <ImageButton -->
+<!--                     android:id="@+id/sohumicroblog" -->
+<!--                     android:layout_width="50dp" -->
+<!--                     android:layout_height="50dp" -->
+<!--                     android:layout_alignParentRight="true" -->
+<!--                     android:background="@drawable/tab_background8" -->
+<!--                     android:clickable="true" -->
+<!--                     android:onClick="selectPlatform" -->
+<!--                     android:src="@drawable/ic_rating_not_important" -->
+<!--                     android:tag="false" /> -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/tab_background1" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/logo_neteasemicroblog" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingLeft="60dp"
+                    android:text="网易微博"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+<!--                 <ImageButton -->
+<!--                     android:id="@+id/neteasemicroblog" -->
+<!--                     android:layout_width="50dp" -->
+<!--                     android:layout_height="50dp" -->
+<!--                     android:layout_alignParentRight="true" -->
+<!--                     android:background="@drawable/tab_background1" -->
+<!--                     android:clickable="true" -->
+<!--                     android:onClick="selectPlatform" -->
+<!--                     android:src="@drawable/ic_rating_not_important" -->
+<!--                     android:tag="false" /> -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/tab_background2" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/logo_renren" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingLeft="60dp"
+                    android:text="人人网"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+                <ImageButton
+                    android:id="@+id/renren"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/tab_background2"
+                    android:clickable="true"
+                    android:onClick="selectPlatform"
+                    android:src="@drawable/ic_rating_not_important"
+                    android:tag="false" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/tab_background3" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="13dp"
+                    android:src="@drawable/logo_douban" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:paddingLeft="60dp"
+                    android:text="豆瓣网"
+                    android:textColor="#ffffff"
+                    android:textSize="18sp" />
+
+<!--                 <ImageButton -->
+<!--                     android:id="@+id/douban" -->
+<!--                     android:layout_width="50dp" -->
+<!--                     android:layout_height="50dp" -->
+<!--                     android:layout_alignParentRight="true" -->
+<!--                     android:background="@drawable/tab_background3" -->
+<!--                     android:clickable="true" -->
+<!--                     android:onClick="selectPlatform" -->
+<!--                     android:src="@drawable/ic_rating_not_important" -->
+<!--                     android:tag="false" /> -->
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
